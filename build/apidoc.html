@@ -1,0 +1,3140 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://github.com/iorga-group/docker-cmd"
+
+    >docker-cmd (v0.2.2)</a>
+</h1>
+<h4>A Docker NodeJS lib wrapping the Docker command line and manage it from a json file.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.docker-cmd">module docker-cmd</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.docker-cmd">
+            function <span class="apidocSignatureSpan"></span>docker-cmd
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager">
+            function <span class="apidocSignatureSpan">docker-cmd.</span>Manager
+            <span class="apidocSignatureSpan">(dockerdescPath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.toString">
+            function <span class="apidocSignatureSpan">docker-cmd.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">docker-cmd.</span>Manager.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.docker-cmd.Manager">module docker-cmd.Manager</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.Manager">
+            function <span class="apidocSignatureSpan">docker-cmd.</span>Manager
+            <span class="apidocSignatureSpan">(dockerdescPath)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.docker-cmd.Manager.prototype">module docker-cmd.Manager.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype._computeOptionsThenBuild">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>_computeOptionsThenBuild
+            <span class="apidocSignatureSpan">(dockerfilePath, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription, dockerdescName , callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype._createDefaultCommand">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>_createDefaultCommand
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype._lookupDescription">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>_lookupDescription
+            <span class="apidocSignatureSpan">(commandName, descriptionTarget, commandOptionsMappingToAName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.attach">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>attach
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.build">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>build
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.commit">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>commit
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.cp">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>cp
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.diff">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>diff
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.events">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>events
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.executeCommand">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>executeCommand
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.export">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>export
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.history">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>history
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.images">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>images
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.import">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>import
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.info">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>info
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.inspect">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>inspect
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.kill">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>kill
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.load">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>load
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.login">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>login
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.logout">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>logout
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.logs">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>logs
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.pause">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>pause
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.port">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>port
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.ps">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>ps
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.pull">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>pull
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.push">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>push
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.restart">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>restart
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.rm">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>rm
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.run">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>run
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.save">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>save
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.search">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>search
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.start">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>start
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.stop">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>stop
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.tag">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>tag
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.top">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>top
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.unpause">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>unpause
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.version">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>version
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-cmd.Manager.prototype.wait">
+            function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>wait
+            <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>_defaultDescriptions</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.docker-cmd" id="apidoc.module.docker-cmd">module docker-cmd</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.docker-cmd" id="apidoc.element.docker-cmd.docker-cmd">
+        function <span class="apidocSignatureSpan"></span>docker-cmd
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DockerCmd() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager" id="apidoc.element.docker-cmd.Manager">
+        function <span class="apidocSignatureSpan">docker-cmd.</span>Manager
+        <span class="apidocSignatureSpan">(dockerdescPath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DockerCmdManager(dockerdescPath) {
+    dockerdescPath = dockerdescPath || &#x27;./dockerdesc.json&#x27;;
+
+    if (!fs.existsSync(dockerdescPath)) {
+        throw new Error(util.format(&#x27;The path &#x22;%s&#x22; does not exists.&#x27;, dockerdescPath));
+    }
+<span class="apidocCodeCommentSpan">    /** @type {string} */
+</span>    this.dockerdescDir = path.dirname(dockerdescPath);
+
+    var dockerdescPathStat = fs.statSync(dockerdescPath);
+    if (dockerdescPathStat.isDirectory()) {
+        this.dockerdescDir = dockerdescPath;
+        dockerdescPath = path.join(dockerdescPath, &#x27;dockerdesc.json&#x27;);
+    }
+    /** @type {Dockerdesc} */
+    var dockerdescContent = fs.readFileSync(dockerdescPath);
+    try {
+        this.dockerdesc = JSON.parse(dockerdescContent);
+    } catch (err) {
+        throw new Error(&#x27;Problem in the dockerdesc.json file format.\n&#x27; + err.stack);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.toString" id="apidoc.element.docker-cmd.toString">
+        function <span class="apidocSignatureSpan">docker-cmd.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.docker-cmd.Manager" id="apidoc.module.docker-cmd.Manager">module docker-cmd.Manager</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.Manager" id="apidoc.element.docker-cmd.Manager.Manager">
+        function <span class="apidocSignatureSpan">docker-cmd.</span>Manager
+        <span class="apidocSignatureSpan">(dockerdescPath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DockerCmdManager(dockerdescPath) {
+    dockerdescPath = dockerdescPath || &#x27;./dockerdesc.json&#x27;;
+
+    if (!fs.existsSync(dockerdescPath)) {
+        throw new Error(util.format(&#x27;The path &#x22;%s&#x22; does not exists.&#x27;, dockerdescPath));
+    }
+<span class="apidocCodeCommentSpan">    /** @type {string} */
+</span>    this.dockerdescDir = path.dirname(dockerdescPath);
+
+    var dockerdescPathStat = fs.statSync(dockerdescPath);
+    if (dockerdescPathStat.isDirectory()) {
+        this.dockerdescDir = dockerdescPath;
+        dockerdescPath = path.join(dockerdescPath, &#x27;dockerdesc.json&#x27;);
+    }
+    /** @type {Dockerdesc} */
+    var dockerdescContent = fs.readFileSync(dockerdescPath);
+    try {
+        this.dockerdesc = JSON.parse(dockerdescContent);
+    } catch (err) {
+        throw new Error(&#x27;Problem in the dockerdesc.json file format.\n&#x27; + err.stack);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.docker-cmd.Manager.prototype" id="apidoc.module.docker-cmd.Manager.prototype">module docker-cmd.Manager.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype._computeOptionsThenBuild" id="apidoc.element.docker-cmd.Manager.prototype._computeOptionsThenBuild">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>_computeOptionsThenBuild
+        <span class="apidocSignatureSpan">(dockerfilePath, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription, dockerdescName , callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_computeOptionsThenBuild = function (dockerfilePath, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription, dockerdescName , callback) {
+    // now compute all the build options
+<span class="apidocCodeCommentSpan">    /** @type {BuildOptions} */
+</span>    var buildOptions = finalDescription.options || {};
+    if (finalDescription.buildTagFromBuildName &#x26;&#x26; typeof buildOptions.tag === &#x27;undefined&#x27; &#x26;&#x26; typeof buildOptions.t === &#x27;undefined
+&#x27;) {
+        // current tag is not defined, and option buildTagFromBuildName is set, let&#x27;s add the buildName as a tag
+        buildOptions.tag = descriptionTarget;
+    }
+    // set the argument for docker build to be the path to the Dockerfile
+    buildOptions._ = [dockerfilePath];
+    // replace it in the finalDescription because it is this parameter that is used by _defaultCommandHandler
+    finalDescription.options = buildOptions;
+    console.log(&#x27;Building &#x22;&#x27;+descriptionTarget+&#x27;&#x22;&#x27;);
+    _defaultCommandHandler(&#x27;build&#x27;, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription, dockerdescName
+, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype._createDefaultCommand" id="apidoc.element.docker-cmd.Manager.prototype._createDefaultCommand">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>_createDefaultCommand
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_createDefaultCommand = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype._lookupDescription" id="apidoc.element.docker-cmd.Manager.prototype._lookupDescription">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>_lookupDescription
+        <span class="apidocSignatureSpan">(commandName, descriptionTarget, commandOptionsMappingToAName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_lookupDescription = function (commandName, descriptionTarget, commandOptionsMappingToAName) {
+    // First, look directly at the descriptions in the dockerdesc
+    var dockerdescForThatCommand = this.dockerdesc[commandName] || {};
+    var description = dockerdescForThatCommand[descriptionTarget];
+    var dockerdescName = descriptionTarget;
+    // If not found, try to search for that description with its name field
+    if (!description &#x26;&#x26; commandOptionsMappingToAName) {
+        for (dockerdescName in dockerdescForThatCommand) {
+<span class="apidocCodeCommentSpan">            /** @type {Description} */
+</span>            var iDescription = dockerdescForThatCommand[dockerdescName];
+            var optionNameValue = null;
+            commandOptionsMappingToAName.forEach(function(optionName) {
+                optionNameValue = optionNameValue || (iDescription.options &#x26;&#x26; iDescription.options[optionName]);
+            });
+            if (optionNameValue === descriptionTarget) {
+                // we have a match
+                description = iDescription;
+                break;
+            }
+        }
+    }
+    if (!description) {
+        return null;
+    } else {
+        return {
+            dockerdescName: dockerdescName,
+            description: description
+        };
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.attach" id="apidoc.element.docker-cmd.Manager.prototype.attach">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>attach
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">attach = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.build" id="apidoc.element.docker-cmd.Manager.prototype.build">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>build
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">build = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Using `DockerCmd`
+Here is a sample code :
+
+```javascript
+var DockerCmd = require(&#x22;docker-cmd&#x22;);
+var dockerCmd = new DockerCmd();
+
+dockerCmd.<span class="apidocCodeKeywordSpan">build</span>({tag: &#x27;test&#x27;, _: &#x27;./test&#x27;}, null, function(dockerBuildExitCode
+) {
+console.log(&#x27;test built&#x27;);
+
+if (dockerBuildExitCode === 0) {
+  dockerCmd.run({name: &#x27;test&#x27;, _: &#x27;test&#x27;}, null, function(dockerRunExitCode) {
+    console.log(&#x27;test run and finished.&#x27;);
+  });
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.commit" id="apidoc.element.docker-cmd.Manager.prototype.commit">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>commit
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">commit = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.cp" id="apidoc.element.docker-cmd.Manager.prototype.cp">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>cp
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cp = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.diff" id="apidoc.element.docker-cmd.Manager.prototype.diff">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>diff
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">diff = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.events" id="apidoc.element.docker-cmd.Manager.prototype.events">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>events
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">events = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.executeCommand" id="apidoc.element.docker-cmd.Manager.prototype.executeCommand">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>executeCommand
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">executeCommand = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.export" id="apidoc.element.docker-cmd.Manager.prototype.export">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>export
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">export = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.history" id="apidoc.element.docker-cmd.Manager.prototype.history">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>history
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">history = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.images" id="apidoc.element.docker-cmd.Manager.prototype.images">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>images
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">images = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.import" id="apidoc.element.docker-cmd.Manager.prototype.import">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>import
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">import = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.info" id="apidoc.element.docker-cmd.Manager.prototype.info">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>info
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">info = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.inspect" id="apidoc.element.docker-cmd.Manager.prototype.inspect">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>inspect
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inspect = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.kill" id="apidoc.element.docker-cmd.Manager.prototype.kill">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>kill
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">kill = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.load" id="apidoc.element.docker-cmd.Manager.prototype.load">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>load
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.login" id="apidoc.element.docker-cmd.Manager.prototype.login">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>login
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">login = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.logout" id="apidoc.element.docker-cmd.Manager.prototype.logout">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>logout
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">logout = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.logs" id="apidoc.element.docker-cmd.Manager.prototype.logs">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>logs
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">logs = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.pause" id="apidoc.element.docker-cmd.Manager.prototype.pause">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>pause
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pause = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.port" id="apidoc.element.docker-cmd.Manager.prototype.port">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>port
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">port = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.ps" id="apidoc.element.docker-cmd.Manager.prototype.ps">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>ps
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ps = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.pull" id="apidoc.element.docker-cmd.Manager.prototype.pull">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>pull
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pull = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.push" id="apidoc.element.docker-cmd.Manager.prototype.push">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>push
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">push = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.restart" id="apidoc.element.docker-cmd.Manager.prototype.restart">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>restart
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">restart = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.rm" id="apidoc.element.docker-cmd.Manager.prototype.rm">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>rm
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rm = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.run" id="apidoc.element.docker-cmd.Manager.prototype.run">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>run
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var DockerCmd = require(&#x22;docker-cmd&#x22;);
+var dockerCmd = new DockerCmd();
+
+dockerCmd.build({tag: &#x27;test&#x27;, _: &#x27;./test&#x27;}, null, function(dockerBuildExitCode) {
+  console.log(&#x27;test built&#x27;);
+
+  if (dockerBuildExitCode === 0) {
+    dockerCmd.<span class="apidocCodeKeywordSpan">run</span>({name: &#x27;test&#x27;, _: &#x27;test&#x27;}, null, function(dockerRunExitCode
+) {
+      console.log(&#x27;test run and finished.&#x27;);
+    });
+  }
+});
+```
+
+That object will call the `docker` command with all the options you gave as a first parameter.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.save" id="apidoc.element.docker-cmd.Manager.prototype.save">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>save
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">save = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.search" id="apidoc.element.docker-cmd.Manager.prototype.search">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>search
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">search = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.start" id="apidoc.element.docker-cmd.Manager.prototype.start">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>start
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.stop" id="apidoc.element.docker-cmd.Manager.prototype.stop">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>stop
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stop = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.tag" id="apidoc.element.docker-cmd.Manager.prototype.tag">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>tag
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">tag = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.top" id="apidoc.element.docker-cmd.Manager.prototype.top">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>top
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">top = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.unpause" id="apidoc.element.docker-cmd.Manager.prototype.unpause">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>unpause
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unpause = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.version" id="apidoc.element.docker-cmd.Manager.prototype.version">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>version
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">version = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-cmd.Manager.prototype.wait" id="apidoc.element.docker-cmd.Manager.prototype.wait">
+        function <span class="apidocSignatureSpan">docker-cmd.Manager.prototype.</span>wait
+        <span class="apidocSignatureSpan">(descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">wait = function (descriptionTarget, descriptionOptions, commandOptions, dockerOptions, callback) {
+    // the callback is always the last argument
+    switch (arguments.length) {
+        case 2:
+            callback = descriptionOptions;
+            descriptionOptions = undefined;
+            break;
+        case 3:
+            callback = commandOptions;
+            commandOptions = undefined;
+            break;
+        case 4:
+            callback = dockerOptions;
+            dockerOptions = undefined;
+    }
+    // Now will create the final description : beginning from defaults, append the fields from the &#x22;default&#x22; template, then all
+the templates from the given
+    // &#x3c;code&#x3e;description&#x3c;/code&#x3e;, then the fields of the description, and finally the given commandOptions &#x26; dockerOptions
+    var finalDescription = extend(true, {}, this._defaultDescriptions[commandName]); // copy defaults
+    var templates = (this.dockerdesc.templates || {})[commandName] || {};
+    function applyTemplate(template) {
+        if (template) {
+            extend(true, finalDescription, template);
+        }
+    }
+    // Apply templates beginning with `default`
+    applyTemplate(templates.default);
+    // Look directly at the descriptions in the dockerdesc
+    var lookup = this._lookupDescription(commandName, descriptionTarget, commandOptionsMappingToAName);
+    var dockerdescName = descriptionTarget;
+    if (lookup) {
+        var description = lookup.description;
+        dockerdescName = lookup.dockerdescName;
+        var descriptionTemplates = description.templates;
+        if (descriptionTemplates) {
+            [].concat(descriptionTemplates).forEach(function (templateName) {
+                var template = templates[templateName];
+                if (!template) {
+                    throw new Error(util.format(&#x27;%s template &#x22;%s&#x22; is missing&#x27;, commandName, templateName));
+                } else {
+                    applyTemplate(template);
+                }
+            });
+        }
+        // Apply all fields from given description
+        applyTemplate(description);
+    } else {
+        console.warn(util.format(&#x27;Warn: couldn\&#x27;t find the %s description named &#x22;%s&#x22;&#x27;, commandName, descriptionTarget));
+    }
+    // And finally, the options passed from the command line
+    applyTemplate(descriptionOptions);
+    applyTemplate({dockerOptions: dockerOptions, options: commandOptions});
+
+    commandHandler.call(this, commandName, descriptionTarget, descriptionOptions, commandOptions, dockerOptions, finalDescription
+, dockerdescName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
