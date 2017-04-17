@@ -1,1 +1,39 @@
-{     "devDependencies": {         "docker-cmd": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-docker-cmd",     "homepage": "https://github.com/npmdoc/node-npmdoc-docker-cmd",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-docker-cmd.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "api documentation for [docker-cmd (v0.2.2)](http://github.com/iorga-group/docker-cmd) [![npm package](https://img.shields.io/npm/v/npmdoc-docker-cmd.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-docker-cmd) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-docker-cmd.svg)](https://travis-ci.org/npmdoc/node-npmdoc-docker-cmd)",
+    "devDependencies": {
+        "docker-cmd": "*",
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-docker-cmd",
+    "keywords": [
+        "documentation",
+        "docker-cmd"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_docker_cmd.js",
+    "name": "npmdoc-docker-cmd",
+    "nameAlias": "npmdoc_docker_cmd",
+    "nameOriginal": "npmdoc-docker-cmd",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-docker-cmd.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "(set -e; npm install \"kaizhu256/node-utility2#alpha\"; utility2 shDeployHeroku)",
+        "postinstall": "if [ -f npm_scripts.sh ]; then ./npm_scripts.sh postinstall; fi",
+        "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
