@@ -1,4 +1,7 @@
-# api documentation for  [docker-cmd (v0.2.2)](http://github.com/iorga-group/docker-cmd)  [![npm package](https://img.shields.io/npm/v/npmdoc-docker-cmd.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-docker-cmd) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-docker-cmd.svg)](https://travis-ci.org/npmdoc/node-npmdoc-docker-cmd)
+# npmdoc-docker-cmd
+
+#### api documentation for  [docker-cmd (v0.2.2)](http://github.com/iorga-group/docker-cmd)  [![npm package](https://img.shields.io/npm/v/npmdoc-docker-cmd.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-docker-cmd) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-docker-cmd.svg)](https://travis-ci.org/npmdoc/node-npmdoc-docker-cmd)
+
 #### A Docker NodeJS lib wrapping the Docker command line and manage it from a json file.
 
 [![NPM](https://nodei.co/npm/docker-cmd.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/docker-cmd)

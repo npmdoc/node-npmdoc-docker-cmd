@@ -1,6 +1,6 @@
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
-    "description": "api documentation for [docker-cmd (v0.2.2)](http://github.com/iorga-group/docker-cmd) [![npm package](https://img.shields.io/npm/v/npmdoc-docker-cmd.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-docker-cmd) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-docker-cmd.svg)](https://travis-ci.org/npmdoc/node-npmdoc-docker-cmd)",
+    "description": "#### api documentation for  [docker-cmd (v0.2.2)](http://github.com/iorga-group/docker-cmd)  [![npm package](https://img.shields.io/npm/v/npmdoc-docker-cmd.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-docker-cmd) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-docker-cmd.svg)](https://travis-ci.org/npmdoc/node-npmdoc-docker-cmd)",
     "devDependencies": {
         "docker-cmd": "*",
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
@@ -35,5 +35,5 @@
         "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
         "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
-    "version": "0.0.1"
+    "version": "0.0.2"
 }
